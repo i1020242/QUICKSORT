@@ -1,7 +1,6 @@
-/* A typical recursive implementation of quick sort */
 #include<stdio.h>
 
-// A utility function to swap two elements
+
 void swap(int* a, int* b)
 {
     int t = *a;
@@ -9,15 +8,12 @@ void swap(int* a, int* b)
     *b = t;
 }
 
-/* This function takes last element as pivot, places the pivot element at its
-   correct position in sorted array, and places all smaller (smaller than pivot)
-   to left of pivot and all greater elements to right of pivot */
 int partition (int arr[], int l, int h)
 {
     int x = arr[h];    // pivot
-    int i = l -1;  // Index of smaller element
+    int i = l - 1;  // Index of smaller element
 
-    for (int j = l; j <= h- 1; j++)
+    for (int j = l; j <= h - 1; j++)
     {
         // If current element is smaller than or equal to pivot
         if (arr[j] <= x)
@@ -31,7 +27,6 @@ int partition (int arr[], int l, int h)
     return (i + 1); //return pivot position
 }
 
-/* arr[] --> Array to be sorted, l  --> Starting index, h  --> Ending index */
 void quickSort(int arr[], int l, int h)
 {
     if (l < h)
@@ -51,7 +46,6 @@ void printArray(int arr[], int size)
     printf("\n");
 }
 
-// Driver program to test above functions
 int main()
 {
     int arr[] = {10, 7, 8, 9, 1, 5, 5, 10, 7, 8, 9};
